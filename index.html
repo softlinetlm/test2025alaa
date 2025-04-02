@@ -1,12 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <title>test2025alaa</title>
-    <metat chartset="UTF-8">
-    <metat name="description" content="repository test2025 - exemple de projet">
-    <metat name="keywords" content="Github, test2025alaa">
-  </head>
-  <body>
-    <p>test2025alaa 2025/04/03</p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index of /</title>
+</head>
+<body>
+    <h1>Index of /</h1>
+    <ul id="file-list"></ul>
+
+    <script>
+        const repo = "test2025alaa";  // Remplace par le nom de ton repo
+        const user = "softlinetlm";  // Remplace par ton pseudo GitHub
+        const branch = "main";  // Remplace par la branche principale (main ou master)
+        const fileList = document.getElementById("file-list");
+
+        fetch(`https://api.github.com/repos/${user}/${repo}/contents/`)
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(file => {
+                    if (file.name.endsWith(".pdf")) {
+                        const li = document.createElement("li");
+                        li.innerHTML = `<a href="${file.download_url}" target="_blank">${file.name}</a>`;
+                        fileList.appendChild(li);
+                    }
+                });
+            })
+            .catch(error => console.error("Erreur de récupération :", error));
+    </script>
+</body>
 </html>
