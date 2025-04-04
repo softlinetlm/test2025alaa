@@ -1,0 +1,34 @@
+name: Update install.zip Hash
+
+on:
+  push:
+    paths:
+      - "install.zip"
+
+jobs:
+  update-hash:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Calculate SHA-256 hash
+        id: calc-hash
+        run: echo "HASH=$(sha256sum install.zip | awk '{print $1}')" >> $GITHUB_ENV
+
+      - name: Update info.txt
+        run: |
+          HASH_LINE="hkey_install=${HASH}"
+          if grep -q "^hkey_install=" info.txt; then
+            sed -i "s/^hkey_install=.*/$HASH_LINE/" info.txt
+          else
+            echo "$HASH_LINE" >> info.txt
+          fi
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add info.txt
+          git commit -m "Update hkey_install hash in info.txt" || exit 0
+          git push
