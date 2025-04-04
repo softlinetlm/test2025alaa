@@ -16,3 +16,19 @@ drwxrwxrwx+ 2 codespace codespace     4096 Apr  4 20:38 workflows/
 dddddddddddddddddddddd
 sssssssssssssssssssssssss
 dddddddddddddddddddddddddd
+total 13224
+drwxrwxrwx+ 6 codespace root          4096 Apr  4 22:07 ./
+drwxr-xrwx+ 5 codespace root          4096 Apr  4 16:12 ../
+drwxrwxrwx+ 9 codespace root          4096 Apr  4 22:07 .git/
+drwxrwxrwx+ 3 codespace codespace     4096 Apr  4 21:36 .github/
+-rw-rw-rw-  1 codespace root           130 Apr  4 16:12 .sl.dnload
+-rw-rw-rw-  1 codespace root      12086784 Apr  4 16:12 R15_A1_Manual_v1.04(WW).pdf
+-rw-rw-rw-  1 codespace codespace      203 Apr  4 20:01 README.md
+-rw-rw-rw-  1 codespace root       1396543 Apr  4 16:12 SIM900m.pdf
+-rw-rw-rw-  1 codespace root          5727 Apr  4 16:12 d.jpg
+-rw-rw-rw-  1 codespace codespace       55 Apr  4 20:24 demo.txt
+drwxrwxrwx+ 2 codespace codespace     4096 Apr  4 20:30 docs/
+-rw-rw-rw-  1 codespace root          1244 Apr  4 16:12 index.html
+-rw-rw-rw-  1 codespace codespace       15 Apr  4 21:46 info.txt
+-rw-rw-rw-  1 codespace codespace     1010 Apr  4 22:07 install.zip
+drwxrwxrwx+ 2 codespace codespace     4096 Apr  4 22:07 workflows/
