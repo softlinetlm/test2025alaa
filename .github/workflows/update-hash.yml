@@ -18,7 +18,8 @@ jobs:
 
       - name: Update info.txt
         run: |
-          HASH_LINE="hkey_install=${ { env.HASH } }"
+          echo "HASH=$(sha256sum install.zip | awk '{print $1}')" >> $GITHUB_ENV
+          HASH_LINE="hkey_install=$HASH"
           if grep -q "^hkey_install=" info.txt; then
             sed -i "s/^hkey_install=.*/$HASH_LINE/" info.txt
           else
