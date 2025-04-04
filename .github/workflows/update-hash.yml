@@ -18,7 +18,7 @@ jobs:
 
       - name: Update info.txt
         run: |
-          HASH_LINE="hkey_install=${HASH}"
+          HASH_LINE="hkey_install=${ { env.HASH } }"
           if grep -q "^hkey_install=" info.txt; then
             sed -i "s/^hkey_install=.*/$HASH_LINE/" info.txt
           else
